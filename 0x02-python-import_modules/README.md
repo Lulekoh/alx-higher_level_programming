@@ -22,3 +22,8 @@ Write a program that prints all the names defined by the compiled module hidden_
 Write a program that imports the variable a from the file variable_load_5.py and prints its value
 #All files should be executable
 
+#Advanced/optional tasks
+#file6 > 100-my_calculator.py
+6. Build my own calculator!
+Write a program that imports all functions from the file calculator_1.py and handles basic operations.
+
