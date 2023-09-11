@@ -1,5 +1,5 @@
-
-dule class BaseGeometry'''
+#!/usr/bin/python3
+'''Module class BaseGeometry'''
 
 
 class BaseGeometry:
