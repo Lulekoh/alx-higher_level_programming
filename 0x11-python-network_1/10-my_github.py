@@ -1,12 +1,22 @@
 #!/usr/bin/python3
-"""Uses the GitHub API to display a GitHub ID based on given credentials.
 """
-import sys
+This script communicates with the github API commits endpoint
+and gets the sha and author name of the last ten commits
+"""
 import requests
-from requests.auth import HTTPBasicAuth
-
+from sys import argv
 
 if __name__ == "__main__":
-    auth = HTTPBasicAuth(sys.argv[1], sys.argv[2])
-    r = requests.get("https://api.github.com/user", auth=auth)
-    print(r.json().get("id")))
+    username: str = argv[1]
+    access_token: str = argv[2]
+
+    url: str = "https://api.github.com/user"
+
+    response = requests.get(url, auth=(username, access_token))
+    status: int = response.status_code
+
+    if status == 200:
+        user_id = response.json().get("id")
+        print(f"User ID: {user_id}")
+    else:
+        print(f"Failed to retrieve user ID. Status code: {status}")
